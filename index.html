@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakare Oluwatomisin - Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+
+        @layer utilities {
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px) scale(0.98);
+                transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+                filter: blur(4px);
+                will-change: opacity, transform, filter;
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+            .reveal-delay-1 { transition-delay: 100ms; }
+            .reveal-delay-2 { transition-delay: 200ms; }
+            .reveal-delay-3 { transition-delay: 300ms; }
+        }
+        body {
+            background-color: #0a0a0c;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection {
+            background-color: rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-indigo-500/30 selection:text-indigo-200 font-sans">
+    
+    <!-- Top Nav -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 bg-[#0a0a0c]/80 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center font-bold text-white text-sm">BO</div>
+            <span class="text-white font-bold tracking-wide">Bakare.O</span>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-neutral-400">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="hidden sm:inline">Available for new opportunities</span>
+            </div>
+            <span class="hidden sm:inline">Lagos, NG</span>
+        </div>
+    </nav>
+
+    <!-- Sticky Resume Button -->
+    <a href="resume.pdf" download class="fixed bottom-8 right-8 z-50 bg-white text-black font-bold py-3 px-6 rounded-full shadow-lg shadow-white/10 transition-transform transform hover:scale-105 flex items-center gap-2 group border border-neutral-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-y-0.5 transition-transform"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span class="hidden sm:inline">Resume</span>
+    </a>
+
+    <!-- 1. HERO -->
+    <section id="hero" class="min-h-[100svh] flex flex-col justify-center items-center relative overflow-hidden px-6 pt-20">
+        <div class="absolute inset-0 z-0 bg-[#0a0a0c]">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto w-full text-center">
+            <div class="reveal inline-block px-3 py-1 mb-8 border border-indigo-500/30 bg-indigo-500/10 rounded text-indigo-400 text-xs font-semibold tracking-widest uppercase">
+                Portfolio 2026
+            </div>
+            
+            <h1 class="reveal reveal-delay-1 text-5xl md:text-7xl lg:text-[5.5rem] font-display font-bold tracking-tight leading-tight mb-6 text-white">
+                Bakare Oluwatomisin.
+            </h1>
+            
+            <h2 class="reveal reveal-delay-2 text-xl md:text-3xl text-neutral-400 font-display mb-10 font-light">
+                Product Marketing Manager <span class="text-indigo-500 font-medium mx-2">|</span> Growth Strategist
+            </h2>
+            
+            <div class="reveal reveal-delay-3 flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <a href="#work" class="inline-flex justify-center items-center px-8 py-4 bg-white text-black font-semibold rounded hover:bg-neutral-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 gap-2">
+                    View Impact Results <span class="text-lg">↓</span>
+                </a>
+                <a href="resume.pdf" download class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 gap-2">
+                    Download Resume 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT -->
+    <section id="about" class="py-32 px-6 lg:px-12 bg-[#0a0a0c]">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <h3 class="text-3xl md:text-4xl font-display font-bold mb-8 text-white tracking-tight">About</h3>
+                    <div class="w-12 h-1 bg-indigo-500 mb-10"></div>
+                    <p class="text-neutral-400 leading-relaxed text-lg mb-6 font-light">
+                        Product Marketing Manager and Growth Strategist with <span class="text-white font-medium">5+ years of experience</span> driving user acquisition, engagement, and revenue across AI tech, media, and fintech.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed text-lg font-light">
+                        Exceeded pre-launch acquisition targets by <span class="text-white font-medium">67%</span>, scaled content interactions by <span class="text-white font-medium">515.6%</span>, and delivered <span class="text-white font-medium">373%</span> user growth through organic channels with zero paid ad spend.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 reveal transition-delay-200">
+                    <div class="p-8 border border-white/5 bg-white/[0.02] hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.04] transition-all duration-500 ease-out group rounded-xl">
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-3 tracking-tight">515.6%</div>
+                        <div class="text-xs md:text-sm text-neutral-500 font-medium">Content Interaction Growth</div>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-white/[0.02] hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.04] transition-all duration-500 ease-out group rounded-xl">
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-3 tracking-tight">373%</div>
+                        <div class="text-xs md:text-sm text-neutral-500 font-medium">Organic User Growth</div>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-white/[0.02] hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.04] transition-all duration-500 ease-out group rounded-xl">
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-3 tracking-tight">67%</div>
+                        <div class="text-xs md:text-sm text-neutral-500 font-medium">Pre-launch Target Exceeded</div>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-white/[0.02] hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.04] transition-all duration-500 ease-out group rounded-xl">
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-3 tracking-tight">52.5K</div>
+                        <div class="text-xs md:text-sm text-neutral-500 font-medium">Total Content Views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WORK -->
+    <section id="work" class="py-32 px-6 lg:px-12 border-y border-white/5 relative bg-[#0a0a0c]">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="reveal mb-20 text-center lg:text-left">
+                <h3 class="text-3xl md:text-4xl font-display font-bold mb-6 text-white tracking-tight">Selected Work</h3>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto lg:mx-0"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">Gesturé</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">AI Nail Tech, Lagos</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Build awareness and an engaged user base before product launch.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Conceptualized and executed a pre-launch user acquisition campaign</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Organized and led a brand activation event for target community</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Engineered a data-backed content pivot across Instagram and TikTok</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-8 p-5 bg-white/[0.03] rounded-xl border border-white/5">
+                            <strong class="text-indigo-400 block mb-2 text-xs font-semibold uppercase tracking-wider">Result</strong>
+                            <p class="text-white font-medium text-sm md:text-base">500+ users before launch (67% above target), 515.6% content interaction growth, 52.5K total views over 3 months</p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">Live Social Pages I managed</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://www.instagram.com/gesturehq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Instagram <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@gesturehq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                TikTok <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">Inside Success Global</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">Pan-African Media, UK/Nigeria/Ghana</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Scale readership and engagement across two markets with zero ad budget.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Executed Pan-African SEO and content strategy across Nigeria and Ghana</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Optimized discovery funnels to capture high-intent organic traffic</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Coordinated freelance writers and managed publishing schedules</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-8 p-5 bg-white/[0.03] rounded-xl border border-white/5">
+                            <strong class="text-indigo-400 block mb-2 text-xs font-semibold uppercase tracking-wider">Result</strong>
+                            <p class="text-white font-medium text-sm md:text-base">373% Active User growth (11K users) in Nigeria, 509% user surge in Ghana, 48,000+ interaction events, 12,000+ sessions — zero paid ad spend</p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">Articles I wrote</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://insidesuccessnigeria.com/the-art-of-the-cold-dm-how-to-slide-into-opportunity-without-sounding-desperate/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                The Art of the Cold DM <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://insidesuccessnigeria.com/how-evans-akanno-defeated-post-graduation-rejection-in-tech/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Post-Grad Rejection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://insidesuccessmagazine.com/startup-failure-repeatable-patterns/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Startup Failure <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://insidesuccessmagazine.com/founder-burnout-uk-startup-crisis/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Founder Burnout UK <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">Folivision Limited</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">Renewable Energy, Lagos</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Build a content presence that drives organic traffic and converts high-intent visitors for a solar energy brand.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Wrote copy for 7 core website sections</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Authored 11 SEO-optimized blog articles</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Integrated USPs (70%+ savings, LTO/BNPL financing) into all copy</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-8 p-5 bg-white/[0.03] rounded-xl border border-white/5">
+                            <strong class="text-indigo-400 block mb-2 text-xs font-semibold uppercase tracking-wider">Result</strong>
+                            <p class="text-white font-medium text-sm md:text-base">Increased organic site traffic and thought leadership positioning in Nigerian renewable energy space</p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">Live website copy + articles</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://folivision.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Website <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://folivision.com/the-proven-truth-about-solar-energy-that-will-save-you-money-and-sanity-immediately/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Solar Energy Truths <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                            <a href="https://folivision.com/the-essential-guide-to-solar-inverters-and-how-to-choose-the-right-one/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Solar Inverters Guide <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">Casa Valora</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">Shortlet Platform</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Build brand presence and audience on social media for a shortlet accommodation platform.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Developed tailored marketing strategies aligned to product features</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Ensured consistent brand messaging across all digital touchpoints</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Managed content and community engagement</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">Live page I managed</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://www.instagram.com/casa_valora" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Instagram <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">Notes by Noelle</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">AI Influencer</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Concept and build an AI influencer persona from scratch.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Conceptualized the AI influencer identity, tone, and content direction</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Built and managed the Instagram presence</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-8 p-5 bg-white/[0.03] rounded-xl border border-white/5">
+                            <strong class="text-indigo-400 block mb-2 text-xs font-semibold uppercase tracking-wider">Result</strong>
+                            <p class="text-white font-medium text-sm md:text-base">Active AI influencer account with original content</p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">AI influencer I created and managed</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://www.instagram.com/notes_by_noelle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Instagram <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="reveal group relative bg-white/[0.02] border border-white/5 p-8 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out flex flex-col h-full rounded-2xl">
+                    <div class="mb-6 pb-6 border-b border-white/5">
+                        <h4 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors tracking-tight">MySounds Global</h4>
+                        <p class="text-indigo-400 font-medium text-sm drop-shadow-sm">Global Music Platform</p>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="mb-6">
+                            <p class="text-neutral-400 font-light text-sm md:text-base">Write engaging web copy for a global music platform targeting youth audiences.</p>
+                        </div>
+                        <div class="mb-6">
+                            <ul class="text-neutral-400 font-light space-y-3 text-sm md:text-base">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Developed persuasive copy tailored to youth and entertainment audiences</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-500 mr-3 opacity-80 mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                    <span class="leading-relaxed">Wrote across web, social, and email touchpoints</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-auto border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <p class="text-xs text-neutral-500 font-medium">Live website copy</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://mysoundsglobal.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+                                Website <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SKILLS -->
+    <section id="skills" class="py-32 px-6 lg:px-12 bg-[#0a0a0c]">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal mb-16 text-center lg:text-left">
+                <h3 class="text-3xl md:text-4xl font-display font-bold mb-6 text-white tracking-tight">Skills & Expertise</h3>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto lg:mx-0"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Column 1 -->
+                <div class="space-y-12 reveal">
+                    <div>
+                        <h4 class="text-lg font-display font-semibold text-white mb-6">Growth & GTM</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Growth Strategy</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Product Marketing</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">GTM Planning</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Campaign Management</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Performance Tracking</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Brand Management</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Community Management</span>
+                        </div>
+                    </div>
+                
+                    <div>
+                        <h4 class="text-lg font-display font-semibold text-white mb-6">Content & SEO</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">SEO</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Content Strategy</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Editorial Writing</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Social Media Strategy</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Copywriting</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Community Engagement</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Email Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="space-y-12 reveal">
+                    <div>
+                        <h4 class="text-lg font-display font-semibold text-white mb-6">Data & Analytics</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Google Analytics</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Meta Business Suite</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Looker Studio</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Power BI</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Tableau</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-display font-semibold text-white mb-6">Tools & Platforms</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Canva Pro</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">WordPress</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Notion</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Jira</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Mailchimp</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">ConvertKit</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">n8n</span>
+                            <span class="px-4 py-2 border border-white/10 rounded font-medium text-sm text-neutral-300 bg-white/[0.02] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-colors cursor-default">Google Workspace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WRITING / BLOG -->
+    <section id="writing" class="py-32 px-6 lg:px-12 border-y border-white/5 relative bg-[#0a0a0c]">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal mb-16 text-center lg:text-left">
+                <h3 class="text-3xl md:text-4xl font-display font-bold mb-6 text-white tracking-tight">Writing</h3>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto lg:mx-0"></div>
+            </div>
+            
+            <div class="reveal">
+                <div id="substack-posts" class="grid md:grid-cols-3 gap-6">
+                    <div class="text-neutral-500 flex items-center gap-3 col-span-3">
+                        <div class="w-4 h-4 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                        Loading latest insights...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT -->
+    <section id="contact" class="py-40 px-6 lg:px-12 bg-[#0a0a0c] text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(99,102,241,0.08)_0%,transparent_50%)] pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto reveal relative z-10">
+            <h3 class="text-4xl md:text-6xl font-display font-bold mb-12 text-white tracking-tight">Let's work together.</h3>
+            
+            <a href="mailto:niolabakare@gmail.com" class="group inline-flex flex-col items-center mb-16">
+                <span class="text-xl md:text-3xl font-display font-medium text-neutral-300 group-hover:text-white transition-colors mb-2">
+                    niolabakare@gmail.com
+                </span>
+                <div class="w-full h-px bg-white/20 group-hover:bg-white transition-colors"></div>
+            </a>
+            
+            <div class="flex justify-center gap-6 mb-20">
+                <a href="https://www.linkedin.com/in/oluwatomisin-bakare/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-indigo-500/50 hover:bg-white/[0.05] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://x.com/niola_xo" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-indigo-500/50 hover:bg-white/[0.05] transition-all duration-300">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://substack.com/@niolabakare" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-indigo-500/50 hover:bg-white/[0.05] transition-all duration-300">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM22.539 10.83H1.46v11.116l10.54-5.874 10.539 5.874V10.83zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-[#0a0a0c] text-center border-t border-white/5 relative z-10">
+        <p class="text-neutral-500 text-sm font-light">
+            © <span id="year"></span> Bakare Oluwatomisin. Built with intention.
+        </p>
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Intersection Observer for Reveal animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+            // Fetch Substack RSS
+            const fetchSubstackPosts = async () => {
+                const postsContainer = document.getElementById('substack-posts');
+                try {
+                    const rssUrl = "https://niolabakare.substack.com/feed"; 
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+                    
+                    const response = await fetch(proxyUrl);
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    const data = await response.json();
+                    
+                    if (data.contents) {
+                        const parser = new DOMParser();
+                        const xml = parser.parseFromString(data.contents, "text/xml");
+                        const items = Array.from(xml.querySelectorAll("item"));
+                        
+                        // Parse categories and filter by 'professional'
+                        const professionalPosts = items.filter(item => {
+                            const categories = Array.from(item.querySelectorAll("category")).map(c => c.textContent?.toLowerCase());
+                            return categories.includes("professional");
+                        }).slice(0, 3);
+                        
+                        if (professionalPosts.length > 0) {
+                            postsContainer.innerHTML = professionalPosts.map(item => {
+                                const title = item.querySelector("title")?.textContent || "Untitled";
+                                const link = item.querySelector("link")?.textContent || "#";
+                                const pubDateStr = item.querySelector("pubDate")?.textContent || "";
+                                const pubDate = new Date(pubDateStr).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
+                                const descNode = item.querySelector("description");
+                                const excerpt = descNode ? descNode.textContent.replace(/<[^>]+>/g, '').substring(0, 150) + "..." : "";
+                                
+                                return `
+                                <a href="${link}" target="_blank" rel="noopener noreferrer" class="group block p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out" style="animation: fadeUp 0.8s ease-out forwards; opacity: 0;/[0.02] border border-white/5 rounded-2xl hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 hover:bg-white/[0.03] transition-all duration-500 ease-out">
+                                    <p class="text-indigo-400 text-sm mb-4 font-medium">${pubDate}</p>
+                                    <h4 class="text-xl font-display font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors line-clamp-2 tracking-tight">${title}</h4>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed mb-6 line-clamp-3">${excerpt}</p>
+                                    <span class="inline-flex items-center text-sm font-medium text-white group-hover:text-indigo-400 transition-colors">
+                                        Read on Substack <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-50"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                                    </span>
+                                </a>
+                                `;
+                            }).join('');
+                        } else {
+                            postsContainer.innerHTML = `
+                            <div class="col-span-3 p-12 border border-white/5 rounded-2xl bg-white/[0.01] text-center">
+                                <p class="text-neutral-400 font-light">Writing coming soon.</p>
+                            </div>
+                            `;
+                        }
+                    }
+                } catch (error) {
+                    // Silently fail and show fallback
+                    console.error("Failed to fetch RSS:", error);
+                    postsContainer.innerHTML = `
+                    <div class="col-span-3 p-12 border border-white/5 rounded-2xl bg-white/[0.01] text-center">
+                        <p class="text-neutral-400 font-light">Writing coming soon.</p>
+                    </div>
+                    `;
+                }
+            };
+
+            fetchSubstackPosts();
+        });
+    </script>
+</body>
+</html>
